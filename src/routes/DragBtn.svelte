@@ -3,29 +3,42 @@
 
 	export let registry: Registry;
 
-	let dragging = false
+	let shapeId: string|undefined = undefined
 	let offsetX = 0
 	let offsetY = 0
 
 	function handleClick() {
+		shapeId = undefined
+
 		registry.svgOnClick = () => {}
 		registry.svgOnMouseMove = ({x, y}) => {
-			if (!dragging) {
+			if (shapeId === undefined) {
 				return
 			}
-			registry.shapes[0].x = x - offsetX
-			registry.shapes[0].y = y - offsetX
+			for (let i = 0; i < registry.shapes.length; i++) {
+				if (registry.shapes[i].id === shapeId) {
+					registry.shapes[i].x = x - offsetX
+					registry.shapes[i].y = y - offsetY
+					break
+				}
+			}
 		}
 		registry.svgOnMouseLeave = () => {
-			dragging = false
+			shapeId = undefined
 		}
 		registry.svgOnMouseUp = () => {
-			dragging = false
+			shapeId = undefined
 		}
-		registry.rectOnMouseDown = (shape, {x, y}) => {
-			dragging = true
-			offsetX = x - shape.x
-			offsetY = y - shape.y
+		registry.rectOnMouseDown = (id, {x, y}) => {
+			for (let i = 0; i < registry.shapes.length; i++) {
+				if (registry.shapes[i].id === id) {
+					// TODO: ずれているかも
+					offsetX = x - registry.shapes[i].x
+					offsetY = y - registry.shapes[i].y
+					shapeId = id
+					break
+				}
+			}
 		}
 	}
 </script>

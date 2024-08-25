@@ -11,7 +11,7 @@
 		}
 		const x = e.clientX
 		const y = e.clientY
-		registry.rectOnMouseDown(shape, {x, y})
+		registry.rectOnMouseDown(shape.id, {x, y})
 	}
 </script>
 

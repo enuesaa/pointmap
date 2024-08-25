@@ -1,4 +1,5 @@
 export type Rect = {
+  id: string
   tag: 'rect'
   x: number
   y: number

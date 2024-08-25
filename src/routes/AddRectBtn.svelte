@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Registry } from '$lib/registry'
+	import { nanoid } from 'nanoid'
 
 	export let registry: Registry;
 
@@ -8,6 +9,7 @@
 			registry.shapes = [
 				...registry.shapes,
 				{
+					id: nanoid(),
 					tag: 'rect',
 					x,
 					y,
