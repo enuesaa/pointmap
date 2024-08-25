@@ -1,6 +1,4 @@
 <script lang="ts">
-	import AddCircleBtn from './AddCircleBtn.svelte'
-	import AddPathBtn from './AddPathBtn.svelte'
 	import AddRectBtn from './AddRectBtn.svelte'
 	import type { Registry, Position } from '$lib/registry'
 
@@ -48,8 +46,6 @@
 	}
 </script>
 
-<AddPathBtn bind:registry={registry} />
-<AddCircleBtn bind:registry={registry} />
 <AddRectBtn bind:registry={registry} />
 
 <svg
@@ -59,13 +55,7 @@
 	on:mouseleave={handleMouseLeave}
 >
 	{#each registry.shapes as shape}
-		{#if shape.tag === 'rect'}
-			<rect x={shape.x} y={shape.y} width={shape.width} height={shape.height} fill={shape.fill} />
-		{:else if shape.tag === 'circle'}
-			<circle cx={shape.cx} cy={shape.cy} r={shape.r} fill={shape.fill} />
-		{:else if shape.tag === 'path'}
-			<path d={shape.d} stroke={shape.stroke} fill="none" stroke-width={shape.strokeWidth} />
-		{/if}
+		<rect x={shape.x} y={shape.y} width={shape.width} height={shape.height} fill={shape.fill} />
 	{/each}
 </svg>
 

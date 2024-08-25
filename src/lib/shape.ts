@@ -1,18 +1,3 @@
-export type Path = {
-  tag: 'path'
-  d: string
-  stroke: string
-  strokeWidth: number
-}
-
-export type Circle = {
-  tag: 'circle'
-  cx: number
-  cy: number
-  r: number
-  fill: string
-}
-
 export type Rect = {
   tag: 'rect'
   x: number
@@ -22,4 +7,4 @@ export type Rect = {
   fill: string
 }
 
-export type Shape = Path | Circle | Rect
+export type Shape = Rect
