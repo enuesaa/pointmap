@@ -9,8 +9,8 @@
 		if (registry.rectOnMouseDown === undefined) {
 			return
 		}
-		const x = e.clientX
-		const y = e.clientY
+		const x = e.clientX - registry.svgLeft
+		const y = e.clientY - registry.svgTop
 		registry.rectOnMouseDown(shape.id, {x, y})
 	}
 </script>

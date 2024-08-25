@@ -5,6 +5,8 @@
 	import DragBtn from './DragBtn.svelte'
 
 	let registry: Registry = {
+		svgLeft: 0,
+		svgTop: 0,
 		shapes: [],
 		svgOnClick: undefined,
 		svgOnMouseMove: undefined,
@@ -13,10 +15,15 @@
 		rectOnMouseDown: undefined,
 	}
 
-	function calcXY(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }): Position {
+	function updateSvgPosition(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
 		const { left, top } = e.currentTarget.getBoundingClientRect()
-		const x = e.clientX - left;
-		const y = e.clientY - top;
+		registry.svgLeft = left
+		registry.svgTop = top
+	}
+
+	function calcXY(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }): Position {
+		const x = e.clientX - registry.svgLeft;
+		const y = e.clientY - registry.svgTop;
 		return { x, y }
 	}
 
@@ -24,6 +31,7 @@
 		if (registry.svgOnClick === undefined) {
 			return
 		}
+		updateSvgPosition(e)
 		registry.svgOnClick(calcXY(e))
 	}
 
@@ -38,6 +46,7 @@
 		if (registry.svgOnMouseUp === undefined) {
 			return
 		}
+		updateSvgPosition(e)
 		registry.svgOnMouseUp(calcXY(e))
 	}
 
@@ -67,5 +76,6 @@
 	svg {
 		width: 100%;
 		height: 100vh;
+		border: solid 1px #000;
 	}
 </style>

@@ -32,7 +32,6 @@
 		registry.rectOnMouseDown = (id, {x, y}) => {
 			for (let i = 0; i < registry.shapes.length; i++) {
 				if (registry.shapes[i].id === id) {
-					// TODO: ずれているかも
 					offsetX = x - registry.shapes[i].x
 					offsetY = y - registry.shapes[i].y
 					shapeId = id

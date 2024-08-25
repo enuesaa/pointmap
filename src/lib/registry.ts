@@ -12,6 +12,8 @@ export type SvgOnMouseLeave = (position: Position) => void
 export type RectOnMouseDown = (shapeId: string, position: Position) => void
 
 export type Registry = {
+  svgLeft: number
+  svgTop: number
   shapes: Shape[]
   svgOnClick: SvgOnClick|undefined
   svgOnMouseMove: SvgOnMouseMove|undefined
