@@ -5,8 +5,7 @@
 	import DragBtn from './DragBtn.svelte'
 
 	let registry: Registry = {
-		svgLeft: 0,
-		svgTop: 0,
+		svg: {x: 0, y:0},
 		shapes: [],
 		svgOnClick: undefined,
 		svgOnMouseMove: undefined,
@@ -17,44 +16,43 @@
 
 	function updateSvgPosition(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
 		const { left, top } = e.currentTarget.getBoundingClientRect()
-		registry.svgLeft = left
-		registry.svgTop = top
+		registry.svg.x = left
+		registry.svg.y = top
 	}
 
-	function calcXY(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }): Position {
-		const x = e.clientX - registry.svgLeft;
-		const y = e.clientY - registry.svgTop;
+	function rebaseXY(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }): Position {
+		const x = e.clientX - registry.svg.x
+		const y = e.clientY - registry.svg.y
 		return { x, y }
 	}
 
 	function handleClick(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
+		updateSvgPosition(e)
 		if (registry.svgOnClick === undefined) {
 			return
 		}
-		updateSvgPosition(e)
-		registry.svgOnClick(calcXY(e))
+		registry.svgOnClick(rebaseXY(e))
 	}
 
 	function handleMouseMove(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
 		if (registry.svgOnMouseMove === undefined) {
 			return
 		}
-		registry.svgOnMouseMove(calcXY(e))
+		registry.svgOnMouseMove(rebaseXY(e))
 	}
 
 	function handleMouseUp(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
 		if (registry.svgOnMouseUp === undefined) {
 			return
 		}
-		updateSvgPosition(e)
-		registry.svgOnMouseUp(calcXY(e))
+		registry.svgOnMouseUp(rebaseXY(e))
 	}
 
 	function handleMouseLeave(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
 		if (registry.svgOnMouseLeave === undefined) {
 			return
 		}
-		registry.svgOnMouseLeave(calcXY(e))
+		registry.svgOnMouseLeave(rebaseXY(e))
 	}
 </script>
 

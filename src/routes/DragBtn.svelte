@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { Registry } from '$lib/registry'
+	import type { Position, Registry } from '$lib/registry'
 
 	export let registry: Registry;
 
 	let shapeId: string|undefined = undefined
-	let offsetX = 0
-	let offsetY = 0
+	let start: Position = {x: 0, y: 0}
 
 	function handleClick() {
 		shapeId = undefined
@@ -17,8 +16,8 @@
 			}
 			for (let i = 0; i < registry.shapes.length; i++) {
 				if (registry.shapes[i].id === shapeId) {
-					registry.shapes[i].x = x - offsetX
-					registry.shapes[i].y = y - offsetY
+					registry.shapes[i].x = x - start.x
+					registry.shapes[i].y = y - start.y
 					break
 				}
 			}
@@ -32,8 +31,8 @@
 		registry.rectOnMouseDown = (id, {x, y}) => {
 			for (let i = 0; i < registry.shapes.length; i++) {
 				if (registry.shapes[i].id === id) {
-					offsetX = x - registry.shapes[i].x
-					offsetY = y - registry.shapes[i].y
+					start.x = x - registry.shapes[i].x
+					start.y = y - registry.shapes[i].y
 					shapeId = id
 					break
 				}
