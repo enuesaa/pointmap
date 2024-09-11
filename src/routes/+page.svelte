@@ -17,9 +17,9 @@
 	}
 </script>
 
-<main class="mx-auto container w-10/12 flex flex-row justify-start gap-3 flex-wrap">
+<section class="flex flex-row justify-start gap-3 flex-wrap">
 	<DrawCardNewLink />
 	{#each drawings as id}
 		<DrawCard drawingId={id} />
 	{/each}
-</main>
+</section>

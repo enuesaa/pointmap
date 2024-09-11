@@ -17,6 +17,4 @@
 	}
 </script>
 
-<main class="mx-auto container w-10/12">
-	<Drawer {registry} {id} />
-</main>
+<Drawer {registry} {id} />

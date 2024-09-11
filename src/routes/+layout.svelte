@@ -4,4 +4,7 @@
 </script>
 
 <Header />
-<slot />
+
+<main class="mx-auto container w-10/12">
+	<slot />
+</main>

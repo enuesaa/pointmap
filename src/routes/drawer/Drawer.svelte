@@ -5,6 +5,7 @@
 	import DragBtn from './DragBtn.svelte'
 	import ResizeBtn from './ResizeBtn.svelte'
 	import SaveBtn from './SaveBtn.svelte'
+	import DeleteBtn from './DeleteBtn.svelte'
 
 	export let id: string | undefined = undefined
 
@@ -64,6 +65,10 @@
 <DragBtn bind:registry />
 <ResizeBtn bind:registry />
 <SaveBtn bind:registry savedId={id} />
+
+{#if id !== undefined}
+	<DeleteBtn {id} />
+{/if}
 
 <svg on:click={handleClick} on:mousemove={handleMouseMove} on:mouseup={handleMouseUp} on:mouseleave={handleMouseLeave}>
 	{#each registry.shapes as shape}
