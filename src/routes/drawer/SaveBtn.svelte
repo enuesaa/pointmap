@@ -1,14 +1,15 @@
 <script lang="ts">
 	import type { Registry } from '$lib/registry'
+	import { goto } from '$app/navigation'
 	import { nanoid } from 'nanoid'
 
 	export let registry: Registry;
 	
-	function hanldeSave() {
+	async function hanldeSave() {
 		const id = nanoid()
 		const savedata = JSON.stringify(registry)
-		console.log(id, savedata)
 		localStorage.setItem(`drawing.${id}`, savedata)
+		await goto(`/drawer/${id}`)
 	}
 </script>
 

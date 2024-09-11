@@ -60,8 +60,8 @@
 
 <AddRectBtn bind:registry={registry} />
 <DragBtn bind:registry={registry} />
-<SaveBtn bind:registry={registry} />
 <ResizeBtn bind:registry={registry} />
+<SaveBtn bind:registry={registry} />
 
 <svg
 	on:click={handleClick}

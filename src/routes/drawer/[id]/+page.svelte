@@ -18,4 +18,6 @@
 	}
 </script>
 
-<Drawer bind:registry={registry} />
+<main class="mx-auto container w-10/12">
+	<Drawer registry={registry} />
+</main>
