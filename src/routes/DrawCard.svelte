@@ -8,6 +8,6 @@
 
 <style lang="postcss">
 	a {
-		@apply w-[32%] aspect-video border-black border-solid border-2 block;
+		@apply w-[32%] aspect-video border-black border-solid border-[1px] block;
 	}
 </style>
