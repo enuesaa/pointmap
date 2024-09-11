@@ -6,7 +6,7 @@
 	import ResizeBtn from './ResizeBtn.svelte'
 	import SaveBtn from './SaveBtn.svelte'
 
-	let registry: Registry = {
+	export let registry: Registry = {
 		svg: {x: 0, y:0},
 		shapes: [],
 		svgOnClick: undefined,
