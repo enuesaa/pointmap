@@ -3,6 +3,7 @@
 	import type { Registry, Position } from '$lib/registry'
 	import Rect from './Rect.svelte'
 	import DragBtn from './DragBtn.svelte'
+	import SaveBtn from './SaveBtn.svelte'
 
 	let registry: Registry = {
 		svg: {x: 0, y:0},
@@ -58,6 +59,7 @@
 
 <AddRectBtn bind:registry={registry} />
 <DragBtn bind:registry={registry} />
+<SaveBtn bind:registry={registry} />
 
 <svg
 	on:click={handleClick}
