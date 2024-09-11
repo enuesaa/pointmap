@@ -13,11 +13,10 @@
 		const savedata = localStorage.getItem(`drawing.${id}`)
 		if (savedata !== null) {
 			registry = JSON.parse(savedata)
-			console.log(registry)
 		}
 	}
 </script>
 
 <main class="mx-auto container w-10/12">
-	<Drawer registry={registry} />
+	<Drawer registry={registry} id={id} />
 </main>

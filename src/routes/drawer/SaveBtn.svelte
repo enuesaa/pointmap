@@ -3,13 +3,16 @@
 	import { goto } from '$app/navigation'
 	import { nanoid } from 'nanoid'
 
+	export let savedId: string|undefined;
 	export let registry: Registry;
 	
 	async function hanldeSave() {
-		const id = nanoid()
+		const id = savedId ?? nanoid()
 		const savedata = JSON.stringify(registry)
 		localStorage.setItem(`drawing.${id}`, savedata)
-		await goto(`/drawer/${id}`)
+		if (savedId === undefined) {
+			await goto(`/drawer/${id}`)
+		}
 	}
 </script>
 
