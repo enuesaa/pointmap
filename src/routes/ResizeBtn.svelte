@@ -44,23 +44,6 @@
 			}
 		}
 	}
-
-	// function start(e: MouseEvent) {
-	// 	resizing = true
-	// 	initialMouseX = e.clientX
-	// 	initialWidth = rect.width // どんどん伸びていくから初期値を保持している
-	// }
-
-	// function resize(e: MouseEvent) {
-	// 	if (!resizing) {
-	// 		return
-	// 	}
-	// 	rect.width = initialWidth + e.clientX - initialMouseX
-	// }
-
-	// function stop() {
-	// 	resizing = false
-	// }
 </script>
 
 <button on:click|preventDefault={handleClick}>resize</button>
