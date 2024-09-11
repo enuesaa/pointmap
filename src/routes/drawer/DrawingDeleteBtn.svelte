@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
+	import { deleteDrawing } from '$lib/drawing'
 
 	export let id: string
 
 	async function handleClick() {
-		localStorage.removeItem(`drawing.${id}`)
+		deleteDrawing(id)
 		await goto('/')
 	}
 </script>

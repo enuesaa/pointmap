@@ -4,8 +4,9 @@
 	import Rect from './Rect.svelte'
 	import DragBtn from './DragBtn.svelte'
 	import ResizeBtn from './ResizeBtn.svelte'
-	import SaveBtn from './SaveBtn.svelte'
-	import DeleteBtn from './DeleteBtn.svelte'
+	import DrawingDeleteBtn from './DrawingDeleteBtn.svelte'
+	import DrawingCreateBtn from './DrawingCreateBtn.svelte'
+	import DrawingUpdateBtn from './DrawingUpdateBtn.svelte'
 
 	export let id: string | undefined = undefined
 
@@ -64,10 +65,12 @@
 <AddRectBtn bind:registry />
 <DragBtn bind:registry />
 <ResizeBtn bind:registry />
-<SaveBtn bind:registry savedId={id} />
 
 {#if id !== undefined}
-	<DeleteBtn {id} />
+	<DrawingUpdateBtn {id} {registry} />
+	<DrawingDeleteBtn {id} />
+{:else}
+	<DrawingCreateBtn {registry} />
 {/if}
 
 <svg on:click={handleClick} on:mousemove={handleMouseMove} on:mouseup={handleMouseUp} on:mouseleave={handleMouseLeave}>
