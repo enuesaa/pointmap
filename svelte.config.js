@@ -7,7 +7,7 @@ export default {
 	kit: {
 		adapter: adapter({
 			pages: 'dist',
-			fallback: '404.html',
+			fallback: 'index.html',
 		}),
 	},
 }
