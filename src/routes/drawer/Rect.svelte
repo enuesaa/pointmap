@@ -20,6 +20,10 @@
 </script>
 
 <rect
-	x={shape.x} y={shape.y} width={shape.width} height={shape.height} fill={shape.fill}
+	x={shape.x}
+	y={shape.y}
+	width={shape.width}
+	height={shape.height}
+	fill={shape.fill}
 	on:mousedown={handleRectOnMouseDown}
 />

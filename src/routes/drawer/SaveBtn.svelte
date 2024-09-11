@@ -3,9 +3,9 @@
 	import { goto } from '$app/navigation'
 	import { nanoid } from 'nanoid'
 
-	export let savedId: string|undefined;
-	export let registry: Registry;
-	
+	export let savedId: string | undefined
+	export let registry: Registry
+
 	async function hanldeSave() {
 		const id = savedId ?? nanoid()
 		const savedata = JSON.stringify(registry)

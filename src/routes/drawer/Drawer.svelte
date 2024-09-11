@@ -6,10 +6,10 @@
 	import ResizeBtn from './ResizeBtn.svelte'
 	import SaveBtn from './SaveBtn.svelte'
 
-	export let id: string|undefined = undefined;
+	export let id: string | undefined = undefined
 
 	export let registry: Registry = {
-		svg: {x: 0, y:0},
+		svg: { x: 0, y: 0 },
 		shapes: [],
 		svgOnClick: undefined,
 		svgOnMouseMove: undefined,
@@ -60,17 +60,12 @@
 	}
 </script>
 
-<AddRectBtn bind:registry={registry} />
-<DragBtn bind:registry={registry} />
-<ResizeBtn bind:registry={registry} />
-<SaveBtn bind:registry={registry} savedId={id} />
+<AddRectBtn bind:registry />
+<DragBtn bind:registry />
+<ResizeBtn bind:registry />
+<SaveBtn bind:registry savedId={id} />
 
-<svg
-	on:click={handleClick}
-	on:mousemove={handleMouseMove}
-	on:mouseup={handleMouseUp}
-	on:mouseleave={handleMouseLeave}
->
+<svg on:click={handleClick} on:mousemove={handleMouseMove} on:mouseup={handleMouseUp} on:mouseleave={handleMouseLeave}>
 	{#each registry.shapes as shape}
 		<Rect {shape} {registry} />
 	{/each}

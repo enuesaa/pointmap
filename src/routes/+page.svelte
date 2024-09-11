@@ -4,7 +4,7 @@
 
 	import { browser } from '$app/environment'
 
-	let drawings: string[] = [];
+	let drawings: string[] = []
 	if (browser) {
 		drawings = []
 		for (let i = 0; i < localStorage.length; i++) {
@@ -20,6 +20,6 @@
 <main class="mx-auto container w-10/12 flex flex-row justify-start gap-3 flex-wrap">
 	<DrawCardNewLink />
 	{#each drawings as id}
-		<DrawCard drawingId={id} />		
+		<DrawCard drawingId={id} />
 	{/each}
 </main>

@@ -1,16 +1,16 @@
 <script lang="ts">
 	import type { Registry } from '$lib/registry'
 
-	export let registry: Registry;
+	export let registry: Registry
 
-	let shapeId: string|undefined = undefined
-	let initial = {x: 0, y: 0, width: 0, height: 0}
+	let shapeId: string | undefined = undefined
+	let initial = { x: 0, y: 0, width: 0, height: 0 }
 
 	function handleClick() {
 		shapeId = undefined
 
 		registry.svgOnClick = () => {}
-		registry.svgOnMouseMove = ({x, y}) => {
+		registry.svgOnMouseMove = ({ x, y }) => {
 			if (shapeId === undefined) {
 				return
 			}
@@ -28,7 +28,7 @@
 		registry.svgOnMouseUp = () => {
 			shapeId = undefined
 		}
-		registry.rectOnMouseDown = (id, {x, y}) => {
+		registry.rectOnMouseDown = (id, { x, y }) => {
 			for (let i = 0; i < registry.shapes.length; i++) {
 				if (registry.shapes[i].id === id) {
 					// どんどん伸びていくから初期値を保持している

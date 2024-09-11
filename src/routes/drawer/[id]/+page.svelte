@@ -4,10 +4,10 @@
 	import { browser } from '$app/environment'
 	import Drawer from '../Drawer.svelte'
 
-	let id: string;
+	let id: string
 	$: id = $page.params.id
 
-	let registry: Registry;
+	let registry: Registry
 
 	$: if (browser) {
 		const savedata = localStorage.getItem(`drawing.${id}`)
@@ -18,5 +18,5 @@
 </script>
 
 <main class="mx-auto container w-10/12">
-	<Drawer registry={registry} id={id} />
+	<Drawer {registry} {id} />
 </main>

@@ -2,7 +2,7 @@
 	import type { Registry } from '$lib/registry'
 	import { nanoid } from 'nanoid'
 
-	export let registry: Registry;
+	export let registry: Registry
 
 	function handleClick() {
 		registry.svgOnClick = ({ x, y }) => {
