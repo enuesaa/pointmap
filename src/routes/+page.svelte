@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Drawer from './Drawer.svelte'
 </script>
 
-<Drawer />
+<a href="/drawer">drawer</a>
