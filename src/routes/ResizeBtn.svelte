@@ -4,8 +4,7 @@
 	export let registry: Registry;
 
 	let shapeId: string|undefined = undefined
-	let initialMouseX = 0
-	let initialWidth = 0
+	let initial = {x: 0, y: 0, width: 0, height: 0}
 
 	function handleClick() {
 		shapeId = undefined
@@ -17,9 +16,8 @@
 			}
 			for (let i = 0; i < registry.shapes.length; i++) {
 				if (registry.shapes[i].id === shapeId) {
-					// registry.shapes[i].x = x - start.x
-					// registry.shapes[i].y = y - start.y
-					registry.shapes[i].width = initialWidth + x - initialMouseX
+					registry.shapes[i].width = initial.width + x - initial.x
+					registry.shapes[i].height = initial.height + y - initial.y
 					break
 				}
 			}
@@ -33,8 +31,13 @@
 		registry.rectOnMouseDown = (id, {x, y}) => {
 			for (let i = 0; i < registry.shapes.length; i++) {
 				if (registry.shapes[i].id === id) {
-					initialMouseX = x
-					initialWidth = registry.shapes[i].width // どんどん伸びていくから初期値を保持している
+					// どんどん伸びていくから初期値を保持している
+					initial = {
+						x,
+						y,
+						width: registry.shapes[i].width,
+						height: registry.shapes[i].height,
+					}
 					shapeId = id
 					break
 				}
