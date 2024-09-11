@@ -1,8 +1,7 @@
-import { nanoid } from 'nanoid'
 import type { Registry } from './registry'
 
 export const createDrawing = (registry: Registry): string => {
-  const id = nanoid()
+  const id = crypto.randomUUID()
   const data = JSON.stringify(registry)
   localStorage.setItem(`drawing.${id}`, data)
   return id

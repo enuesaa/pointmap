@@ -40,8 +40,5 @@
 				}
 			}
 		]
-	},
-	"dependencies": {
-		"nanoid": "^5.0.7"
 	}
 }
