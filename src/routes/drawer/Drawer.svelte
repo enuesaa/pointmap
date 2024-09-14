@@ -68,7 +68,6 @@
 
 <DrawerDangerZone {id} />
 
-
 <style lang="postcss">
 	svg {
 		width: 100%;
