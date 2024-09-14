@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 	import type { Registry } from '$lib/registry'
-	import Drawer from '../Drawer.svelte'
+	import Drawer from './Drawer.svelte'
 	import { getDrawing } from '$lib/drawing'
 
 	let id: string

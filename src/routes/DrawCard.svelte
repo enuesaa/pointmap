@@ -1,11 +1,11 @@
 <script lang="ts">
 	import DrawCardThumbnail from './DrawCardThumbnail.svelte'
 
-	export let drawingId: string
+	export let id: string
 </script>
 
-<a href="/drawer/{drawingId}">
-	<DrawCardThumbnail id={drawingId} />
+<a href="/drawing/{id}">
+	<DrawCardThumbnail {id} />
 </a>
 
 <style lang="postcss">

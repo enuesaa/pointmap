@@ -1,4 +1,4 @@
-<a href="/drawer"> + </a>
+<a href="/drawing"> + </a>
 
 <style lang="postcss">
 	a {

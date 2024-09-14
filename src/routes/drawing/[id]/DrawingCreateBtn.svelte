@@ -7,7 +7,7 @@
 
 	async function handleClick() {
 		const id = createDrawing(registry)
-		await goto(`/drawer/${id}`)
+		await goto(`/drawing/${id}`)
 	}
 </script>
 

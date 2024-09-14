@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Rect from './drawer/Rect.svelte'
+	import Rect from './drawing/[id]/Rect.svelte'
 	import { getDrawing } from '$lib/drawing'
 	import type { Registry } from '$lib/registry'
 
