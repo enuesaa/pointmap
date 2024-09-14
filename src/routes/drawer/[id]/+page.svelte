@@ -1,19 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 	import type { Registry } from '$lib/registry'
-	import { browser } from '$app/environment'
 	import Drawer from '../Drawer.svelte'
+	import { getDrawing } from '$lib/drawing'
 
 	let id: string
-	$: id = $page.params.id
-
 	let registry: Registry
 
-	$: if (browser) {
-		const savedata = localStorage.getItem(`drawing.${id}`)
-		if (savedata !== null) {
-			registry = JSON.parse(savedata)
-		}
+	$: {
+		id = $page.params.id
+		registry = getDrawing(id)
 	}
 </script>
 
