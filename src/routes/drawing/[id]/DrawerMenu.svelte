@@ -8,7 +8,7 @@
 
 	export let id: string | undefined = undefined
 
-	export let registry: Registry;
+	export let registry: Registry
 </script>
 
 <div class="flex justify-between items-center gap-2">

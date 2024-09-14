@@ -9,6 +9,6 @@
 	export let registry: Registry = createRegistry()
 </script>
 
-<DrawerMenu bind:registry={registry} {id} />
-<DrawerSvg bind:registry={registry} />
+<DrawerMenu bind:registry {id} />
+<DrawerSvg bind:registry />
 <DrawerDangerZone {id} />
