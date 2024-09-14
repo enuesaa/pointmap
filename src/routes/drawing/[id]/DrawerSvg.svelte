@@ -46,7 +46,7 @@
 	}
 </script>
 
-<svg on:click={handleClick} on:mousemove={handleMouseMove} on:mouseup={handleMouseUp} on:mouseleave={handleMouseLeave}>
+<svg viewBox="0 0 1000 600" on:click={handleClick} on:mousemove={handleMouseMove} on:mouseup={handleMouseUp} on:mouseleave={handleMouseLeave}>
 	{#each registry.shapes as shape}
 		<Rect {shape} {registry} />
 	{/each}
@@ -54,8 +54,8 @@
 
 <style lang="postcss">
 	svg {
-		width: 100%;
-		height: 80vh;
+		width: 1000px;
+		height: 600px;
 		border: solid 1px #000;
 	}
 </style>

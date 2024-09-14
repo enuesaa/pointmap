@@ -10,11 +10,11 @@
 	export let registry: Registry = createRegistry()
 </script>
 
-<section class="flex gap-3">
+<section class="flex justify-between px-6">
 	<div class="w-48">
 		<DrawerHistories {registry} {id} />
 	</div>
-	<div class="flex-auto">
+	<div class="w-[1000px]">
 		<DrawerMenu bind:registry {id} />
 		<DrawerSvg bind:registry />
 		<DrawerDangerZone {id} />

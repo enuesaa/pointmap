@@ -5,7 +5,7 @@
 	export let shapes: Shape[]
 </script>
 
-<svg class="w-full h-full">
+<svg viewBox="0 0 1000 600" class="w-full h-auto">
 	{#each shapes as shape}
 		<RectFixed {shape} />
 	{/each}

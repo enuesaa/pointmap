@@ -23,7 +23,7 @@ export const createDrawing = (registry: Registry): [string, Registry] => {
 }
 
 export const updateDrawing = (id: string, registry: Registry): [string, Registry] => {
-	if (registry.histories.length > 5) {
+	if (registry.histories.length > 4) {
 		registry.histories.shift()
 	}
 	registry.histories.push(structuredClone(registry.shapes))
