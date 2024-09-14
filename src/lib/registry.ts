@@ -14,6 +14,7 @@ export type RectOnMouseDown = (shapeId: string, position: Position) => void
 export type Registry = {
 	svg: Position
 	shapes: Shape[]
+	histories: Shape[][]
 	svgOnClick: SvgOnClick | undefined
 	svgOnMouseMove: SvgOnMouseMove | undefined
 	svgOnMouseUp: SvgOnMouseUp | undefined

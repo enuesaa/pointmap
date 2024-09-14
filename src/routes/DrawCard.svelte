@@ -1,11 +1,16 @@
 <script lang="ts">
-	import DrawCardThumbnail from './DrawCardThumbnail.svelte'
+	import { getDrawing } from '$lib/drawing'
+	import type { Registry } from '$lib/registry'
+	import DrawerThumbnail from './drawing/[id]/DrawerThumbnail.svelte'
 
 	export let id: string
+
+	let registry: Registry
+	$: registry = getDrawing(id)
 </script>
 
 <a href="/drawing/{id}">
-	<DrawCardThumbnail {id} />
+	<DrawerThumbnail {registry} />
 </a>
 
 <style lang="postcss">

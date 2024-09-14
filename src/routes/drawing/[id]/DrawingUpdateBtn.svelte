@@ -6,7 +6,9 @@
 	export let registry: Registry
 
 	function handleClick() {
-		updateDrawing(id, registry)
+		const [_, updated] = updateDrawing(id, registry)
+		console.log(updated)
+		registry = updated
 	}
 </script>
 

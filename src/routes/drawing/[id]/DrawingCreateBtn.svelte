@@ -6,7 +6,7 @@
 	export let registry: Registry
 
 	async function handleClick() {
-		const id = createDrawing(registry)
+		const [id, _] = createDrawing(registry)
 		await goto(`/drawing/${id}`)
 	}
 </script>

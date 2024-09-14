@@ -5,6 +5,7 @@ export const createRegistry = (): Registry => {
 	return {
 		svg: { x: 0, y: 0 },
 		shapes: [],
+		histories: [],
 		svgOnClick: undefined,
 		svgOnMouseMove: undefined,
 		svgOnMouseUp: undefined,
@@ -13,16 +14,20 @@ export const createRegistry = (): Registry => {
 	}
 }
 
-export const createDrawing = (registry: Registry): string => {
+export const createDrawing = (registry: Registry): [string, Registry] => {
+	registry.histories = [registry.shapes]
 	const id = crypto.randomUUID()
-	const data = JSON.stringify(registry)
+	const data = JSON.stringify({shapes: registry.shapes, histories: registry.histories})
 	localStorage.setItem(`drawing.${id}`, data)
-	return id
+	return [id, registry]
 }
 
-export const updateDrawing = (id: string, registry: Registry) => {
-	const data = JSON.stringify(registry)
+export const updateDrawing = (id: string, registry: Registry): [string, Registry] => {
+	registry.histories.push(registry.shapes)
+	const data = JSON.stringify({shapes: registry.shapes, histories: registry.histories})
 	localStorage.setItem(`drawing.${id}`, data)
+
+	return [id, registry]
 }
 
 export const deleteDrawing = (id: string) => {
@@ -30,14 +35,18 @@ export const deleteDrawing = (id: string) => {
 }
 
 export const getDrawing = (id: string): Registry => {
+	const registry = createRegistry()
 	if (!browser) {
-		return createRegistry()
+		return registry
 	}
 	const savedata = localStorage.getItem(`drawing.${id}`)
 	if (savedata !== null) {
-		return JSON.parse(savedata) as Registry
+		const data = JSON.parse(savedata)
+		registry.shapes = data.shapes ?? []
+		registry.histories = data.histories ?? []
+		return registry
 	}
-	return createRegistry()
+	return registry
 }
 
 export const listDrawingIds = (): string[] => {

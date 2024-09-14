@@ -1,12 +1,8 @@
 <script lang="ts">
-	import Rect from './drawing/[id]/Rect.svelte'
-	import { getDrawing } from '$lib/drawing'
+	import Rect from './Rect.svelte'
 	import type { Registry } from '$lib/registry'
 
-	export let id: string
-
-	let registry: Registry
-	$: registry = getDrawing(id)
+	export let registry: Registry
 </script>
 
 <svg class="w-full h-full">

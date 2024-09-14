@@ -4,11 +4,19 @@
 	import DrawerDangerZone from './DrawerDangerZone.svelte'
 	import { createRegistry } from '$lib/drawing'
 	import DrawerSvg from './DrawerSvg.svelte'
+	import DrawerHistories from './DrawerHistories.svelte'
 
 	export let id: string | undefined = undefined
 	export let registry: Registry = createRegistry()
 </script>
 
-<DrawerMenu bind:registry {id} />
-<DrawerSvg bind:registry />
-<DrawerDangerZone {id} />
+<section class="flex gap-3">
+	<div class="w-48">
+		<DrawerHistories {registry} />
+	</div>
+	<div class="flex-auto">
+		<DrawerMenu bind:registry {id} />
+		<DrawerSvg bind:registry />
+		<DrawerDangerZone {id} />		
+	</div>
+</section>

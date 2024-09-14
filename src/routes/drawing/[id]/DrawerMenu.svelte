@@ -19,7 +19,7 @@
 	<div class="flex-grow" />
 
 	{#if id !== undefined}
-		<DrawingUpdateBtn {id} {registry} />
+		<DrawingUpdateBtn {id} bind:registry />
 	{:else}
 		<DrawingCreateBtn {registry} />
 	{/if}
