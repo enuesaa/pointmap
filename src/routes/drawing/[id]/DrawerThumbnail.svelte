@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Rect from './Rect.svelte'
-	import type { Registry } from '$lib/registry'
+	import RectFixed from './RectFixed.svelte'
+	import type { Shape } from '$lib/shape'
 
-	export let registry: Registry
+	export let shapes: Shape[]
 </script>
 
 <svg class="w-full h-full">
-	{#each registry.shapes as shape}
-		<Rect {shape} {registry} />
+	{#each shapes as shape}
+		<RectFixed {shape} />
 	{/each}
 </svg>

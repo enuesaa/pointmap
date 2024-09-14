@@ -10,7 +10,7 @@
 </script>
 
 <a href="/drawing/{id}">
-	<DrawerThumbnail {registry} />
+	<DrawerThumbnail shapes={registry.shapes} />
 </a>
 
 <style lang="postcss">

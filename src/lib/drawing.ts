@@ -15,7 +15,7 @@ export const createRegistry = (): Registry => {
 }
 
 export const createDrawing = (registry: Registry): [string, Registry] => {
-	registry.histories = [registry.shapes]
+	registry.histories = [structuredClone(registry.shapes)]
 	const id = crypto.randomUUID()
 	const data = JSON.stringify({shapes: registry.shapes, histories: registry.histories})
 	localStorage.setItem(`drawing.${id}`, data)
@@ -23,7 +23,10 @@ export const createDrawing = (registry: Registry): [string, Registry] => {
 }
 
 export const updateDrawing = (id: string, registry: Registry): [string, Registry] => {
-	registry.histories.push(registry.shapes)
+	if (registry.histories.length > 5) {
+		registry.histories.shift()
+	}
+	registry.histories.push(structuredClone(registry.shapes))
 	const data = JSON.stringify({shapes: registry.shapes, histories: registry.histories})
 	localStorage.setItem(`drawing.${id}`, data)
 
