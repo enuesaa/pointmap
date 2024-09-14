@@ -11,9 +11,7 @@
 	}
 </script>
 
-<button on:click|preventDefault={handleClick}>
-	Save to LocalStorage
-</button>
+<button on:click|preventDefault={handleClick}> Save to LocalStorage </button>
 
 <style lang="postcss">
 	button {

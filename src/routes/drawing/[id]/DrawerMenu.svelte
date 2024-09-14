@@ -5,6 +5,7 @@
 	import ResizeBtn from './ResizeBtn.svelte'
 	import DrawingCreateBtn from './DrawingCreateBtn.svelte'
 	import DrawingUpdateBtn from './DrawingUpdateBtn.svelte'
+	import DrawingDownloadBtn from './DrawingDownloadBtn.svelte'
 
 	export let id: string | undefined = undefined
 
@@ -18,6 +19,7 @@
 
 	<div class="flex-grow" />
 
+	<DrawingDownloadBtn {registry} />
 	{#if id !== undefined}
 		<DrawingUpdateBtn {id} bind:registry />
 	{:else}

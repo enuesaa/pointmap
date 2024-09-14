@@ -28,9 +28,7 @@ Histories
 {#each histories as history}
 	<div class="border-solid border-[1px] mb-2 relative">
 		<DrawerThumbnail shapes={history} />
-		<button on:click={() => recover(history)}>
-			Recover
-		</button>
+		<button on:click={() => recover(history)}> Recover </button>
 	</div>
 {/each}
 

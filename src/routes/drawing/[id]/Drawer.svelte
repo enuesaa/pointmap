@@ -17,6 +17,6 @@
 	<div class="flex-auto">
 		<DrawerMenu bind:registry {id} />
 		<DrawerSvg bind:registry />
-		<DrawerDangerZone {id} />		
+		<DrawerDangerZone {id} />
 	</div>
 </section>
