@@ -28,8 +28,14 @@ Histories
 {#each histories as history}
 	<div class="border-solid border-[1px] mb-2 relative">
 		<DrawerThumbnail shapes={history} />
-		<button class="absolute top-0 right-0" on:click={() => recover(history)}>
+		<button on:click={() => recover(history)}>
 			Recover
 		</button>
 	</div>
 {/each}
+
+<style lang="postcss">
+	button {
+		@apply absolute top-1 right-1 text-sm border-solid border-[1px] rounded bg-background my-1 px-1;
+	}
+</style>

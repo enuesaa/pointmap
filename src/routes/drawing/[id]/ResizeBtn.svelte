@@ -46,4 +46,10 @@
 	}
 </script>
 
-<button on:click|preventDefault={handleClick}>resize</button>
+<button on:click|preventDefault={handleClick}>Resize</button>
+
+<style lang="postcss">
+	button {
+		@apply text-sm border-solid border-[1px] rounded mb-1 p-1;
+	}
+</style>
