@@ -12,7 +12,7 @@
 
 <section class="flex gap-3">
 	<div class="w-48">
-		<DrawerHistories {registry} />
+		<DrawerHistories {registry} {id} />
 	</div>
 	<div class="flex-auto">
 		<DrawerMenu bind:registry {id} />
