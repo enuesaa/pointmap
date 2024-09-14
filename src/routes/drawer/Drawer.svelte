@@ -1,12 +1,8 @@
 <script lang="ts">
-	import AddRectBtn from './AddRectBtn.svelte'
 	import type { Registry, Position } from '$lib/registry'
 	import Rect from './Rect.svelte'
-	import DragBtn from './DragBtn.svelte'
-	import ResizeBtn from './ResizeBtn.svelte'
-	import DrawingDeleteBtn from './DrawingDeleteBtn.svelte'
-	import DrawingCreateBtn from './DrawingCreateBtn.svelte'
-	import DrawingUpdateBtn from './DrawingUpdateBtn.svelte'
+	import DrawerMenu from './DrawerMenu.svelte'
+	import DrawerDangerZone from './DrawerDangerZone.svelte'
 
 	export let id: string | undefined = undefined
 
@@ -62,22 +58,16 @@
 	}
 </script>
 
-<AddRectBtn bind:registry />
-<DragBtn bind:registry />
-<ResizeBtn bind:registry />
-
-{#if id !== undefined}
-	<DrawingUpdateBtn {id} {registry} />
-	<DrawingDeleteBtn {id} />
-{:else}
-	<DrawingCreateBtn {registry} />
-{/if}
+<DrawerMenu bind:registry={registry} {id} />
 
 <svg on:click={handleClick} on:mousemove={handleMouseMove} on:mouseup={handleMouseUp} on:mouseleave={handleMouseLeave}>
 	{#each registry.shapes as shape}
 		<Rect {shape} {registry} />
 	{/each}
 </svg>
+
+<DrawerDangerZone {id} />
+
 
 <style lang="postcss">
 	svg {
