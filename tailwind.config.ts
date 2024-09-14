@@ -8,6 +8,7 @@ export default {
 			black: '#1a1a1a',
 			gray: '#cccccc',
 			grayer: '#dddddd',
+			background: '#cccccc',
 		},
 		fontFamily: {
 			zenkaku: ['Zen Kaku Gothic New', 'sans-serif'],
