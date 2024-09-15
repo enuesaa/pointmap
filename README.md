@@ -1,4 +1,5 @@
 # pointmap
+Experimental SVG Editor.
 
 ## What I want..
 
