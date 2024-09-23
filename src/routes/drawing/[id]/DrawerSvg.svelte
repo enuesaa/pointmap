@@ -46,7 +46,15 @@
 	}
 </script>
 
-<svg viewBox="0 0 1000 600" on:click={handleClick} on:mousemove={handleMouseMove} on:mouseup={handleMouseUp} on:mouseleave={handleMouseLeave}>
+<svg
+	viewBox="0 0 1000 600"
+	width="1000"
+	height="600"
+	on:click={handleClick}
+	on:mousemove={handleMouseMove}
+	on:mouseup={handleMouseUp}
+	on:mouseleave={handleMouseLeave}
+>
 	{#each registry.shapes as shape}
 		<Rect {shape} {registry} />
 	{/each}
