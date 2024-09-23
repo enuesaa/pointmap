@@ -6,9 +6,12 @@ export const convertToSvg = (registry: Registry): string => {
   // background
   svg += '<rect width="100%" height="100%" fill="#ffffff"/>\n'
   
-  // rect
+  // shape
   for (const shape of registry.shapes) {
-    svg += `<rect x="${shape.x}" y="${shape.y}" width="${shape.width}" height="${shape.height}" fill="${shape.fill}" />\n`
+    if (shape.tag === 'rect') {
+      svg += `<rect x="${shape.x}" y="${shape.y}" width="${shape.width}" height="${shape.height}" fill="${shape.fill}" />\n`
+    }
+    // TODO text
   }
   svg += '</svg>'
 

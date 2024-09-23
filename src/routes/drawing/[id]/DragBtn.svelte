@@ -29,10 +29,10 @@
 			shapeId = undefined
 		}
 		registry.rectOnMouseDown = (id, { x, y }) => {
-			for (let i = 0; i < registry.shapes.length; i++) {
-				if (registry.shapes[i].id === id) {
-					start.x = x - registry.shapes[i].x
-					start.y = y - registry.shapes[i].y
+			for (let shape of registry.shapes) {
+				if (shape.id === id) {
+					start.x = x - shape.x
+					start.y = y - shape.y
 					shapeId = id
 					break
 				}

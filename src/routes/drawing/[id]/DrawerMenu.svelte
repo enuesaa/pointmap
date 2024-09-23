@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AddRectBtn from './AddRectBtn.svelte'
+	import AddTextBtn from './AddTextBtn.svelte'
 	import type { Registry } from '$lib/registry'
 	import DragBtn from './DragBtn.svelte'
 	import ResizeBtn from './ResizeBtn.svelte'
@@ -14,6 +15,7 @@
 
 <div class="flex justify-between items-center gap-2">
 	<AddRectBtn bind:registry />
+	<AddTextBtn bind:registry />
 	<DragBtn bind:registry />
 	<ResizeBtn bind:registry />
 

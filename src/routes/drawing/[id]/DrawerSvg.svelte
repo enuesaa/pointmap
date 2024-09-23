@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Registry, Position } from '$lib/registry'
 	import Rect from './Rect.svelte'
+	import Text from './Text.svelte'
 
 	export let registry: Registry
 
@@ -56,7 +57,11 @@
 	on:mouseleave={handleMouseLeave}
 >
 	{#each registry.shapes as shape}
-		<Rect {shape} {registry} />
+		{#if shape.tag === 'rect'}
+			<Rect {shape} {registry} />
+		{:else if shape.tag === 'text'}
+			<Text {shape} {registry} />
+		{/if}
 	{/each}
 </svg>
 

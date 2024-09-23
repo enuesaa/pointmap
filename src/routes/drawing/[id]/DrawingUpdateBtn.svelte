@@ -7,7 +7,6 @@
 
 	function handleClick() {
 		const [_, updated] = updateDrawing(id, registry)
-		console.log(updated)
 		registry = updated
 	}
 </script>

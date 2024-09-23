@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { type Shape } from '$lib/shape'
+	import { type Rect } from '$lib/shape'
 	import { type Position, type Registry } from '$lib/registry'
 
-	export let shape: Shape
+	export let shape: Rect
 	export let registry: Registry
 
 	function rebaseXY(e: MouseEvent & { currentTarget: EventTarget & SVGRectElement }): Position {

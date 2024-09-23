@@ -15,8 +15,10 @@
 				return
 			}
 			for (let i = 0; i < registry.shapes.length; i++) {
-				if (registry.shapes[i].id === shapeId) {
+				if (registry.shapes[i].id === shapeId && registry.shapes[i].tag === 'rect') {
+					// @ts-ignore
 					registry.shapes[i].width = initial.width + x - initial.x
+					// @ts-ignore
 					registry.shapes[i].height = initial.height + y - initial.y
 					break
 				}
@@ -29,14 +31,17 @@
 			shapeId = undefined
 		}
 		registry.rectOnMouseDown = (id, { x, y }) => {
-			for (let i = 0; i < registry.shapes.length; i++) {
-				if (registry.shapes[i].id === id) {
+			for (let shape of registry.shapes) {
+				if (shape.tag !== 'rect') {
+					continue
+				}
+				if (shape.id === id) {
 					// どんどん伸びていくから初期値を保持している
 					initial = {
 						x,
 						y,
-						width: registry.shapes[i].width,
-						height: registry.shapes[i].height,
+						width: shape.width,
+						height: shape.height,
 					}
 					shapeId = id
 					break
