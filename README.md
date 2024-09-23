@@ -11,4 +11,3 @@ Experimental SVG Editor.
 
 ## TODO
 - [drawer] 操作ツールの改善. <rect> の on:mousedown イベントをトリガーにドラッグする
-- [drawer] 文字入力

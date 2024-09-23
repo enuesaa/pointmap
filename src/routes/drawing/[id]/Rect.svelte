@@ -25,5 +25,9 @@
 	width={shape.width}
 	height={shape.height}
 	fill={shape.fill}
+	stroke="#ff6633"
+	stroke-width="5"
+	rx="10"
+	ry="10"
 	on:mousedown={handleRectOnMouseDown}
 />
