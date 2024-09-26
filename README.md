@@ -10,4 +10,7 @@ Experimental SVG Editor.
 - FigJam を使ってみて「雑なメモを書き残せる」という点で有用だった。一方で全体像がわかりにくい
 
 ## TODO
-- [drawer] 操作ツールの改善. <rect> の on:mousedown イベントをトリガーにドラッグする
+- [drawer] フリーハンド
+- [drawer] 矢印入力
+- [drawer] メニューバーの追加. 図形によって異なるメニューバーを表示する
+- [drawer] テキスト入力
