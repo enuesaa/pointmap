@@ -19,6 +19,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <text x={shape.x} y={shape.y} on:mousedown={handleOnMouseDown}>
 	{shape.value}
 </text>

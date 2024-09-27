@@ -48,6 +48,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 <svg
 	viewBox="0 0 1000 600"
 	width="1000"
