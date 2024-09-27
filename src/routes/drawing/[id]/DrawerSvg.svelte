@@ -2,6 +2,7 @@
 	import type { Registry, Position } from '$lib/registry'
 	import Rect from './Rect.svelte'
 	import Text from './Text.svelte'
+	import Path from './Path.svelte'
 
 	export let registry: Registry
 
@@ -61,6 +62,8 @@
 			<Rect {shape} {registry} />
 		{:else if shape.tag === 'text'}
 			<Text {shape} {registry} />
+		{:else if shape.tag === 'path'}
+			<Path {shape} />
 		{/if}
 	{/each}
 	<line

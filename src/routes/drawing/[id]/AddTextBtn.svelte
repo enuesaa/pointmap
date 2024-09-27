@@ -1,12 +1,7 @@
 <script lang="ts">
 	import type { Registry } from '$lib/registry'
-	import { onMount } from 'svelte'
 
 	export let registry: Registry
-
-	onMount(() => {
-		handleClick()
-	})
 
 	function handleClick() {
 		registry.svgOnClick = ({ x, y }) => {

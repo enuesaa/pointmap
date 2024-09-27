@@ -14,5 +14,10 @@ export type Text = {
 	y: number
 	value: string
 }
+export type Path = {
+	id: string
+	tag: 'path'
+	d: string
+}
 
-export type Shape = Rect|Text
+export type Shape = Rect|Text|Path
