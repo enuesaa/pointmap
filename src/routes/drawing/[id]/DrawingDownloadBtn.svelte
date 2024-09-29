@@ -6,7 +6,7 @@
 
 	async function handleClick() {
 		const data = convertToSvg(registry)
-		const blob = new Blob([data], {type: 'image/svg+xml'})
+		const blob = new Blob([data], { type: 'image/svg+xml' })
 		const url = URL.createObjectURL(blob)
 		const a = document.createElement('a')
 		a.href = url

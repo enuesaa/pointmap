@@ -29,4 +29,4 @@ export type Path = {
 	d: string
 }
 
-export type Shape = Rect|Text|Path|Line
+export type Shape = Rect | Text | Path | Line
