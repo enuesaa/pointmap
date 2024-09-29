@@ -3,6 +3,7 @@
 	import Rect from './Rect.svelte'
 	import Text from './Text.svelte'
 	import Path from './Path.svelte'
+	import Arrow from './Arrow.svelte'
 
 	export let registry: Registry
 
@@ -67,31 +68,8 @@
 			<Path {shape} />
 		{/if}
 	{/each}
-	<line
-	x1={0}
-	y1={0}
-	x2={100}
-	y2={100}
-	stroke="black"
-	stroke-width="2"
-	marker-end="url(#arrowhead)"
-/>
-<defs>
-	<marker
-		id="arrowhead"
-		markerWidth="10"
-		markerHeight="10"
-		refX="10"
-		refY="5"
-		orient="auto"
-		markerUnits="userSpaceOnUse"
-		stroke="black"
-		fill="none"
-	>
-		<!-- 矢印の形を描く -->
-		<path d="M 0 0 L 10 5 L 0 10" stroke="black" fill="none" stroke-width="2"/>
-	</marker>
-</defs>
+
+	<Arrow />
 </svg>
 
 <style lang="postcss">
