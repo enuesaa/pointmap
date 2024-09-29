@@ -5,11 +5,7 @@
 	let shapeId: string | undefined = undefined
 
 	function handleClick() {
-		registry.svgOnClick = ({ x, y }) => {
-			if (shapeId !== undefined) {
-				shapeId = undefined
-				return
-			}
+		registry.svgOnMouseDown = ({ x, y }) => {
 			shapeId = crypto.randomUUID()
 
 			registry.shapes = [
@@ -21,6 +17,7 @@
 				},
 			]
 		}
+		registry.svgOnClick = () => {}
 		registry.svgOnMouseMove = ({ x, y }) => {
 			if (shapeId === undefined) {
 				return

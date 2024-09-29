@@ -48,6 +48,13 @@
 		}
 		registry.svgOnMouseLeave(rebaseXY(e))
 	}
+
+	function handleMouseDown(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
+		if (registry.svgOnMouseDown === undefined) {
+			return
+		}
+		registry.svgOnMouseDown(rebaseXY(e))
+	}
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
@@ -59,6 +66,7 @@
 	on:mousemove={handleMouseMove}
 	on:mouseup={handleMouseUp}
 	on:mouseleave={handleMouseLeave}
+	on:mousedown={handleMouseDown}
 >
 	{#each registry.shapes as shape}
 		{#if shape.tag === 'rect'}
