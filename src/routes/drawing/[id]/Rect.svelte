@@ -11,7 +11,7 @@
 		return { x, y }
 	}
 
-	function handleRectOnMouseDown(e: MouseEvent & { currentTarget: EventTarget & SVGRectElement }) {
+	function handleOnMouseDown(e: MouseEvent & { currentTarget: EventTarget & SVGRectElement }) {
 		if (registry.rectOnMouseDown === undefined) {
 			return
 		}
@@ -19,6 +19,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <rect
 	x={shape.x}
 	y={shape.y}
@@ -29,5 +30,5 @@
 	stroke-width="5"
 	rx="10"
 	ry="10"
-	on:mousedown={handleRectOnMouseDown}
+	on:mousedown={handleOnMouseDown}
 />

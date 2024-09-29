@@ -19,6 +19,7 @@
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <line
 	x1={shape.x}
 	y1={shape.y}
