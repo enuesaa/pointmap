@@ -3,7 +3,8 @@
 	import Rect from './Rect.svelte'
 	import Text from './Text.svelte'
 	import Path from './Path.svelte'
-	import Arrow from './Arrow.svelte'
+	import Line from './Line.svelte'
+	import LineArrowDef from './LineArrowDef.svelte'
 
 	export let registry: Registry
 
@@ -64,12 +65,14 @@
 			<Rect {shape} {registry} />
 		{:else if shape.tag === 'text'}
 			<Text {shape} {registry} />
+		{:else if shape.tag === 'line'}
+			<Line {shape} {registry} />
 		{:else if shape.tag === 'path'}
 			<Path {shape} />
 		{/if}
 	{/each}
 
-	<Arrow />
+	<LineArrowDef />
 </svg>
 
 <style lang="postcss">
