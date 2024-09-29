@@ -5,6 +5,7 @@
 	import Path from './Path.svelte'
 	import Line from './Line.svelte'
 	import LineArrowDef from './LineArrowDef.svelte'
+	import ImagePng from './ImagePng.svelte'
 
 	export let registry: Registry
 
@@ -81,6 +82,7 @@
 	{/each}
 
 	<LineArrowDef />
+	<ImagePng />
 </svg>
 
 <style lang="postcss">
