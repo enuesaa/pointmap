@@ -20,6 +20,10 @@
 					width: 20,
 					height: 20,
 					fill: '#000000',
+					stroke: '#000000',
+					strokeWidth: 5,
+					rx: 5,
+					ry: 5,
 				},
 			]
 		}

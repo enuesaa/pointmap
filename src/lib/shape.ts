@@ -6,6 +6,10 @@ export type Rect = {
 	width: number
 	height: number
 	fill: string
+	stroke: string
+	strokeWidth: number
+	rx: number
+	ry: number
 }
 export type Text = {
 	id: string
