@@ -20,7 +20,7 @@
 		return { x, y }
 	}
 
-	function handleClick(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
+	function handleClick(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {		
 		updateSvgPosition(e)
 		if (registry.svgOnClick === undefined) {
 			return
@@ -29,6 +29,7 @@
 	}
 
 	function handleMouseMove(e: MouseEvent & { currentTarget: EventTarget & SVGSVGElement }) {
+		updateSvgPosition(e)
 		if (registry.svgOnMouseMove === undefined) {
 			return
 		}
