@@ -9,7 +9,7 @@ export const convertToSvg = (registry: Registry): string => {
 	// shape
 	for (const shape of registry.shapes) {
 		if (shape.tag === 'rect') {
-			svg += `<rect x="${shape.x}" y="${shape.y}" width="${shape.width}" height="${shape.height}" fill="${shape.fill}" />\n`
+			svg += `<rect x="${shape.x}" y="${shape.y}" width="${shape.width}" height="${shape.height}" fill="${shape.fill}" stroke="${shape.stroke}" stroke-width="${shape.strokeWidth}" rx="${shape.rx}" ry="${shape.ry}" />\n`
 		} else if (shape.tag === 'text') {
 			svg += `<text x="${shape.x}" y="${shape.y}">${shape.value}</text>\n`
 		}

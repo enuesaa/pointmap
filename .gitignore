@@ -10,7 +10,6 @@ node_modules
 # app
 .env
 .env.*
-docker
 .output
 .vercel
 .svelte-kit

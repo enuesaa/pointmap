@@ -12,7 +12,5 @@ Experimental SVG Editor.
 
 ## TODO
 
-- [drawer] フリーハンド
 - [drawer] 矢印入力
 - [drawer] メニューバーの追加. 図形によって異なるメニューバーを表示する
-- [drawer] テキスト入力
